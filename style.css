@@ -1,0 +1,154 @@
+/* VARIABLES DE COLOR */
+:root {
+    --amarillo: #FFD700;
+    --oscuro: #1a1a1a;
+    --blanco: #ffffff;
+    --gris-fondo: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--blanco);
+    color: var(--oscuro);
+}
+
+/* NAVEGACIÓN */
+.barra-navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: white;
+    border-bottom: 2px solid var(--amarillo);
+}
+
+.logotipo { font-weight: 900; font-size: 1.5rem; }
+.logotipo span { color: #bfa500; }
+
+.enlaces-nav { list-style: none; display: flex; }
+.enlaces-nav li { margin-left: 30px; }
+.enlaces-nav a { text-decoration: none; color: var(--oscuro); font-weight: 600; }
+
+.boton-contacto {
+    background: var(--amarillo);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* CABECERA (HERO) */
+.hero {
+    background-color: var(--amarillo);
+    padding: 80px 10%;
+    text-align: center;
+    clip-path: ellipse(150% 100% at 50% 0%);
+}
+
+.resaltado {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.boton-principal {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--oscuro);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+/* SECCIÓN DE SERVICIOS Y MAPA */
+.seccion-servicios {
+    padding: 60px 10%;
+}
+
+.contenedor-flexible {
+    display: flex;
+    flex-direction: column; /* Apila la fila de arriba y el mapa */
+    gap: 30px;
+}
+
+/* Fila con los 2 cuadros de arriba */
+.fila-superior {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 30px;
+}
+
+.tarjeta-pequena {
+    background: var(--gris-fondo);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.tarjeta-pequena:hover {
+    background: #f0f0f0;
+    transform: translateY(-5px);
+}
+
+.icono { font-size: 2.5rem; margin-bottom: 10px; }
+
+/* RECUADRO DEL MAPA (GRANDE) */
+.tarjeta-grande-mapa {
+    height: 450px; /* Altura del mapa */
+    border-radius: 20px;
+    overflow: hidden; /* Corta la imagen al expandirse */
+    position: relative;
+    cursor: pointer;
+}
+
+.envoltorio-imagen {
+    width: 100%;
+    height: 100%;
+}
+
+.envoltorio-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease-in-out;
+}
+
+/* EFECTO EXPANSIÓN */
+.tarjeta-grande-mapa:hover img {
+    transform: scale(1.1); /* Se expande un 10% */
+}
+
+.etiqueta-mapa {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--oscuro);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: var(--oscuro);
+    color: white;
+}
+
+/* RESPONSIVE PARA MÓVILES */
+@media (max-width: 768px) {
+    .fila-superior {
+        grid-template-columns: 1fr; /* En móvil, uno encima de otro */
+    }
+    .resaltado { font-size: 2.5rem; }
+    .tarjeta-grande-mapa { height: 300px; }
+}
