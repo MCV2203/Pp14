@@ -1,4 +1,3 @@
-/* VARIABLES DE COLOR */
 :root {
     --amarillo: #FFD700;
     --oscuro: #1a1a1a;
@@ -18,7 +17,6 @@ body {
     color: var(--oscuro);
 }
 
-/* NAVEGACIÓN */
 .barra-navegacion {
     display: flex;
     justify-content: space-between;
@@ -41,8 +39,7 @@ body {
     border-radius: 5px;
 }
 
-/* CABECERA (HERO) */
-.hero {
+.inicio {
     background-color: var(--amarillo);
     padding: 80px 10%;
     text-align: center;
@@ -66,21 +63,19 @@ body {
     margin-top: 20px;
 }
 
-/* SECCIÓN DE SERVICIOS Y MAPA */
 .seccion-servicios {
     padding: 60px 10%;
 }
 
 .contenedor-flexible {
     display: flex;
-    flex-direction: column; /* Apila la fila de arriba y el mapa */
+    flex-direction: column;
     gap: 30px;
 }
 
-/* Fila con los 2 cuadros de arriba */
 .fila-superior {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 
@@ -99,11 +94,10 @@ body {
 
 .icono { font-size: 2.5rem; margin-bottom: 10px; }
 
-/* RECUADRO DEL MAPA (GRANDE) */
 .tarjeta-grande-mapa {
-    height: 450px; /* Altura del mapa */
+    height: 450px;
     border-radius: 20px;
-    overflow: hidden; /* Corta la imagen al expandirse */
+    overflow: hidden;
     position: relative;
     cursor: pointer;
 }
@@ -120,9 +114,8 @@ body {
     transition: transform 0.8s ease-in-out;
 }
 
-/* EFECTO EXPANSIÓN */
 .tarjeta-grande-mapa:hover img {
-    transform: scale(1.1); /* Se expande un 10% */
+    transform: scale(1.1);
 }
 
 .etiqueta-mapa {
@@ -136,19 +129,9 @@ body {
     font-weight: bold;
 }
 
-/* PIE DE PÁGINA */
 footer {
     text-align: center;
     padding: 40px;
     background: var(--oscuro);
     color: white;
-}
-
-/* RESPONSIVE PARA MÓVILES */
-@media (max-width: 768px) {
-    .fila-superior {
-        grid-template-columns: 1fr; /* En móvil, uno encima de otro */
-    }
-    .resaltado { font-size: 2.5rem; }
-    .tarjeta-grande-mapa { height: 300px; }
 }
